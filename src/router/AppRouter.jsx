@@ -1,8 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import { MarvelPage } from "../heroes/pages/MarvelPage";
-import { DCPage } from "../heroes/pages/DCPage";
-import { LoginPage } from "../auth/pages/LoginPage";
+import { MarvelPage, DCPage } from "../heroes/pages";
+import { LoginPage } from "../auth/pages";
 
 import { Navbar } from "../ui";
 
