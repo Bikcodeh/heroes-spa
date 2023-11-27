@@ -1,24 +1,21 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import { MarvelPage } from "../heroes/pages/MarvelPage";
 import { DCPage } from "../heroes/pages/DCPage";
 import { LoginPage } from "../auth/pages/LoginPage";
 
-export const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <Navigate to="/marvel" />,
-  },
-  {
-    path: "marvel",
-    element: <MarvelPage />,
-  },
-  {
-    path: "dc",
-    element: <DCPage />,
-  },
-  {
-    path: "login",
-    element: <LoginPage />,
-  },
-]);
+import { Navbar } from "../ui";
+
+export const AppRouter = () => {
+  return (
+    <>
+    <Navbar />
+      <Routes>
+        <Route path="marvel" element={<MarvelPage />} />
+        <Route path="dc" element={<DCPage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="/" element={<Navigate to="/marvel" />} />
+      </Routes>
+    </>
+  );
+};
