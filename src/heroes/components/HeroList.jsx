@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { getHeroesByPublisher } from '../helpers';
 import PropTypes from 'prop-types';
+import { HeroCard } from './HeroCard';
 
 
 export const HeroList = ({ publisher }) => {
@@ -8,11 +9,11 @@ export const HeroList = ({ publisher }) => {
 
   return (
     <>
-    <ul>
+    <div className="row rows-cols1 row-cols-md-3 g-3">
         {
-            heroes.map(heroe => <li key={heroe.id}>{heroe.superhero}</li>)
+            heroes.map(heroe => <HeroCard key={heroe.id} {...heroe} />) 
         }
-    </ul>
+    </div>
     </>
   )
 }
