@@ -3,20 +3,20 @@ import queryString from "query-string";
 
 import { HeroCard } from "../components/HeroCard";
 import { useForm } from "../../hooks/useForm";
-import { getHeroByName } from '../helpers/getHeroByName';
+import { getHeroByName } from "../helpers/getHeroByName";
 
 export const SearchPage = () => {
-
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const { q = "" } = queryString.parse(location.search);
   const { searchText, onInputChange } = useForm({ searchText: q });
   const heroes = getHeroByName(q);
+  const showError = q.trim().length > 0 && heroes.length === 0;
+  const showSearch = q.trim().length === 0;
 
   const onSearchSubmit = (event) => {
     event.preventDefault();
-    if (searchText.trim().length <= 1) return;
     navigate(`?q=${searchText}`);
   };
 
@@ -44,11 +44,25 @@ export const SearchPage = () => {
         <div className="col-7">
           <h4>Result</h4>
           <hr />
-          <div className="alert alert-primary">Search a hero</div>
-          <div className="alert alert-danger">Not hero found with {q}</div>
-          {
-            heroes.map(hero => (<HeroCard  key={hero.id} {...hero} />))
-          }
+          <div
+            className="alert alert-primary animate__animated animate__fadeIn"
+            style={{
+              display: showSearch ? "" : "none",
+            }}
+          >
+            Search a hero
+          </div>
+          <div
+            className="alert alert-danger animate__animated animate__fadeIn"
+            style={{
+              display: showError ? "" : "none",
+            }}
+          >
+            Not hero found with {q}
+          </div>
+          {heroes.map((hero) => (
+            <HeroCard key={hero.id} {...hero} />
+          ))}
         </div>
       </div>
     </>
