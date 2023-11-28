@@ -9,7 +9,6 @@ export const PrivateRoute = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('lastPath', lastPath);
   }, [pathname])
-  console.log('render')
   const { logged } = useContext(AuthContext);
   return logged ? children : <Navigate to="/login" />;
 };
