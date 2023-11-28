@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../auth/context/AuthContext";
 
 export const Navbar = () => {
@@ -61,7 +61,7 @@ export const Navbar = () => {
               </span>
             </li>
             <li className="nav-item">
-              <button className="btn btn-outline-primary" onClick={onLogout}>
+              <button className="btn btn-outline-primary" onClick={onLogout} data-testid="button-logout">
                 Logout
               </button>
             </li>

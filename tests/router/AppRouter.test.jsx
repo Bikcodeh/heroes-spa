@@ -30,7 +30,7 @@ describe("Tests for <AppRouter />", () => {
     };
     const text = "Public route";
     render(
-      <MemoryRouter initialEntries={["/marvel"]}>
+      <MemoryRouter initialEntries={["/login"]}>
         <AuthContext.Provider value={contextValue}>
           <AppRouter />
         </AuthContext.Provider>
