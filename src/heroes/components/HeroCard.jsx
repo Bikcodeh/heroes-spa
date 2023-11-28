@@ -20,7 +20,7 @@ export const HeroCard = ({
       <div className="card">
         <div className="row no-gutters">
           <div className="col-4">
-            <img src={heroImageUrl} className="card-img" alt={superhero} style={{ height: '100%'}}/>
+            <img src={heroImageUrl} className="card-img" alt={superhero} style={{ height: '100%'}} data-testid="image-hero"/>
           </div>
           <div className="col-8">
             <div className="card-body">

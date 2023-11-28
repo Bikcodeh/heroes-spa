@@ -28,7 +28,7 @@ export const SearchPage = () => {
         <div className="col-5">
           <h4>Searching</h4>
           <hr />
-          <form onSubmit={onSearchSubmit}>
+          <form onSubmit={onSearchSubmit} name="form-search">
             <input
               type="text"
               placeholder="Search a hero"
@@ -49,6 +49,7 @@ export const SearchPage = () => {
             style={{
               display: showSearch ? "" : "none",
             }}
+            data-testid="alert-search"
           >
             Search a hero
           </div>
@@ -57,6 +58,7 @@ export const SearchPage = () => {
             style={{
               display: showError ? "" : "none",
             }}
+            data-testid="alert-error"
           >
             Not hero found with {q}
           </div>
