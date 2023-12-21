@@ -16,7 +16,7 @@ App deployed: https://bikcodeh.github.io/heroes-spa/#/marvel
 - CSS
 - Bootstrap
 - React
-- Javascript
+- Typescript
 - Props
 - React router
 - Unit testing (react testing library - jest)
